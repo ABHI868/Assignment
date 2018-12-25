@@ -1,0 +1,32 @@
+
+<html>
+    <head>
+        <title>BookShow</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+    </head>
+    <body>
+        <div id="container">
+            <p id="result"></p>
+            <script>
+                $(document).ready(function(){
+                $.ajax({method:"GET",url:'http://127.0.0.1:8000/book/api/',dataType:'json'}
+                            ).done(function(data){
+                                $.map(data, function(book,index){
+                                    console.log(book);
+                                    $('#result').append('<h5><b>BookName:</b>'+ '\xa0'+book.book_name+'</h5><br>'
+                                
+                                +'<p><b>COST:</b>'+'\xa0'+book.cost+'<p><br>'+
+                                '<p><b>Rating:</b>'+'\xa0'+book.author_name.author_rating+'</p><br>'+
+                                '<p><b>Genre:'+'\xa0'+book.author_name.sub_genre.genre_name+'</p>');
+                                
+                                });
+                     });
+                });
+
+
+            // });
+            </script>
+        </div>
+    </body>
+</html>
