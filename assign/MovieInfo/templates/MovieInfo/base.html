@@ -1,0 +1,23 @@
+
+<html>
+    <head>
+        <title>BookShow</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+    </head>
+    <body>
+        <div id="container">
+            <br>
+            <p id="result"></p>
+            <form id="form" method="GET" action="http://127.0.0.1:8000/book/api/">
+                <br>
+                <button type="submit" class="btn btn-danger">Get Books</button>
+            </form>
+            <form id="formdetail" method="GET" action="http://127.0.0.1:8000/book/">
+                <br>
+                <input type="text" name="q" placeholder="Enter Id.."></input>
+                <button type="submit" class="btn btn-danger">Get Books</button>
+            </form>
+        </div>
+    </body>
+</html>
